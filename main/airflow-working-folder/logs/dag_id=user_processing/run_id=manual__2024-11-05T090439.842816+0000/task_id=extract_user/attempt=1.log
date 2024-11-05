@@ -1,0 +1,30 @@
+[2024-11-05T09:04:48.617+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-05T09:04:48.646+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2024-11-05T09:04:39.842816+00:00 [queued]>
+[2024-11-05T09:04:48.659+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2024-11-05T09:04:39.842816+00:00 [queued]>
+[2024-11-05T09:04:48.660+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-05T09:04:48.681+0000] {taskinstance.py:2888} INFO - Executing <Task(SimpleHttpOperator): extract_user> on 2024-11-05 09:04:39.842816+00:00
+[2024-11-05T09:04:48.693+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=165) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-05T09:04:48.696+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'manual__2024-11-05T09:04:39.842816+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/user-processing.py', '--cfg-path', '/tmp/tmp2si2g6tr']
+[2024-11-05T09:04:48.698+0000] {standard_task_runner.py:72} INFO - Started process 171 to run task
+[2024-11-05T09:04:48.698+0000] {standard_task_runner.py:105} INFO - Job 36: Subtask extract_user
+[2024-11-05T09:04:48.808+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.extract_user manual__2024-11-05T09:04:39.842816+00:00 [running]> on host 3a4fba066ec8
+[2024-11-05T09:04:48.963+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='extract_user' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T09:04:39.842816+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-05T09:04:39.842816+00:00'
+[2024-11-05T09:04:48.966+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-05T09:04:48.967+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-05T09:04:48.968+0000] {logging_mixin.py:190} INFO - Current task name:extract_user state:running start_date:2024-11-05 09:04:48.647352+00:00
+[2024-11-05T09:04:48.968+0000] {logging_mixin.py:190} INFO - Dag name:user_processing and current dag run status:running
+[2024-11-05T09:04:48.969+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-05T09:04:48.970+0000] {http.py:173} INFO - Calling HTTP method
+[2024-11-05T09:04:48.983+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2024-11-05T09:04:48.996+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2024-11-05T09:04:49.571+0000] {http.py:222} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"علی","last":"گلشن"},"location":{"street":{"number":454,"name":"دکتر مفتح"},"city":"قزوین","state":"کردستان","country":"Iran","postcode":99332,"coordinates":{"latitude":"19.3310","longitude":"-167.0044"},"timezone":{"offset":"+11:00","description":"Magadan, Solomon Islands, New Caledonia"}},"email":"aaly.glshn@example.com","login":{"uuid":"9ef04bcf-5188-4b72-833c-8f71a4b0f850","username":"brownpeacock601","password":"chantal","salt":"ugIGSCiG","md5":"b2a40c3b3a83dc6adb57f08106e671b6","sha1":"eae3a5e8f11c0d37e879be65f3d1b458b377b5c0","sha256":"c2b0311eb507811203f1db6376f1f66e9ea2aa814e3f862834af61d48b311f87"},"dob":{"date":"1999-07-18T20:38:10.794Z","age":25},"registered":{"date":"2011-03-04T01:41:40.219Z","age":13},"phone":"062-70953018","cell":"0942-670-5277","id":{"name":"","value":null},"picture":{"large":"https://randomuser.me/api/portraits/men/8.jpg","medium":"https://randomuser.me/api/portraits/med/men/8.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/8.jpg"},"nat":"IR"}],"info":{"seed":"b52f7b5e51fe4ce9","results":1,"page":1,"version":"1.4"}}
+[2024-11-05T09:04:49.606+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-05T09:04:49.607+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, run_id=manual__2024-11-05T09:04:39.842816+00:00, execution_date=20241105T090439, start_date=20241105T090448, end_date=20241105T090449
+[2024-11-05T09:04:49.624+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-05T09:04:49.624+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-05T09:04:49.625+0000] {logging_mixin.py:190} INFO - Dag name:user_processing queued_at:2024-11-05 09:04:39.880899+00:00
+[2024-11-05T09:04:49.626+0000] {logging_mixin.py:190} INFO - Task hostname:3a4fba066ec8 operator:SimpleHttpOperator
+[2024-11-05T09:04:49.678+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-05T09:04:49.689+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

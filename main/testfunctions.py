@@ -1,5 +1,6 @@
  
 import requests
+import json
 
 # # Process Data
 # def _process_user(ti):
@@ -19,8 +20,22 @@ import requests
 # Define the URL
 url = "https://randomuser.me/"
 
-# Make the GET request
-response = requests.get(url)
+
+# Correctly define the headers as a dictionary
+headers = {
+    "Accept": "application/json"  
+}
+
+# Make the GET request with the correct headers parameter
+response = requests.get(url, headers=headers)
+
  
+# K = json.loads(response.text)
+
+
+print(response.text) 
+# try:
+#     response_data = json.loads(response.text)
+# except json.JSONDecodeError as e:
+#     print(f"JSON decoding error: {e}") 
  
-print(response)

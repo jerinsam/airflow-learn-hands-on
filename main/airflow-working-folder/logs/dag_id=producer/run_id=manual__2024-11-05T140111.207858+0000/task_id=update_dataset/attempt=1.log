@@ -1,0 +1,28 @@
+[2024-11-05T14:01:15.689+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-05T14:01:15.706+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: producer.update_dataset manual__2024-11-05T14:01:11.207858+00:00 [queued]>
+[2024-11-05T14:01:15.714+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: producer.update_dataset manual__2024-11-05T14:01:11.207858+00:00 [queued]>
+[2024-11-05T14:01:15.715+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-05T14:01:15.730+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): update_dataset> on 2024-11-05 14:01:11.207858+00:00
+[2024-11-05T14:01:15.742+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=3831) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-05T14:01:15.739+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'producer', 'update_dataset', 'manual__2024-11-05T14:01:11.207858+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/producer.py', '--cfg-path', '/tmp/tmp6xyavbqx']
+[2024-11-05T14:01:15.746+0000] {standard_task_runner.py:105} INFO - Job 52: Subtask update_dataset
+[2024-11-05T14:01:15.746+0000] {standard_task_runner.py:72} INFO - Started process 3833 to run task
+[2024-11-05T14:01:15.950+0000] {task_command.py:467} INFO - Running <TaskInstance: producer.update_dataset manual__2024-11-05T14:01:11.207858+00:00 [running]> on host 3a4fba066ec8
+[2024-11-05T14:01:16.052+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='producer' AIRFLOW_CTX_TASK_ID='update_dataset' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T14:01:11.207858+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-05T14:01:11.207858+00:00'
+[2024-11-05T14:01:16.056+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-05T14:01:16.056+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-05T14:01:16.057+0000] {logging_mixin.py:190} INFO - Current task name:update_dataset state:running start_date:2024-11-05 14:01:15.707026+00:00
+[2024-11-05T14:01:16.057+0000] {logging_mixin.py:190} INFO - Dag name:producer and current dag run status:running
+[2024-11-05T14:01:16.058+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-05T14:01:16.059+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-05T14:01:16.090+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-05T14:01:16.091+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=producer, task_id=update_dataset, run_id=manual__2024-11-05T14:01:11.207858+00:00, execution_date=20241105T140111, start_date=20241105T140115, end_date=20241105T140116
+[2024-11-05T14:01:16.128+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-05T14:01:16.129+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-05T14:01:16.129+0000] {logging_mixin.py:190} INFO - Dag name:producer queued_at:2024-11-05 14:01:11.218821+00:00
+[2024-11-05T14:01:16.130+0000] {logging_mixin.py:190} INFO - Task hostname:3a4fba066ec8 operator:_PythonDecoratedOperator
+[2024-11-05T14:01:16.169+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-05T14:01:16.188+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-05T14:01:16.191+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
