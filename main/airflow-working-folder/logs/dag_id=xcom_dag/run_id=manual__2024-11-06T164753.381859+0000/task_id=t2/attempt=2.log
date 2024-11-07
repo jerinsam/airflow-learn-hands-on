@@ -1,0 +1,20 @@
+[2024-11-06T16:50:49.132+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T16:50:49.151+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xcom_dag.t2 manual__2024-11-06T16:47:53.381859+00:00 [queued]>
+[2024-11-06T16:50:49.162+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xcom_dag.t2 manual__2024-11-06T16:47:53.381859+00:00 [queued]>
+[2024-11-06T16:50:49.163+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-11-06T16:50:49.178+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): t2> on 2024-11-06 16:47:53.381859+00:00
+[2024-11-06T16:50:49.185+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=805) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T16:50:49.187+0000] {standard_task_runner.py:72} INFO - Started process 806 to run task
+[2024-11-06T16:50:49.187+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xcom_dag', 't2', 'manual__2024-11-06T16:47:53.381859+00:00', '--job-id', '166', '--raw', '--subdir', 'DAGS_FOLDER/xcom_dag.py', '--cfg-path', '/tmp/tmpplwqf2re']
+[2024-11-06T16:50:49.188+0000] {standard_task_runner.py:105} INFO - Job 166: Subtask t2
+[2024-11-06T16:50:49.231+0000] {task_command.py:467} INFO - Running <TaskInstance: xcom_dag.t2 manual__2024-11-06T16:47:53.381859+00:00 [running]> on host 66acfa37dd15
+[2024-11-06T16:50:49.331+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xcom_dag' AIRFLOW_CTX_TASK_ID='t2' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T16:47:53.381859+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-06T16:47:53.381859+00:00'
+[2024-11-06T16:50:49.332+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T16:50:49.354+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-06T16:50:49.365+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T16:50:49.366+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=xcom_dag, task_id=t2, run_id=manual__2024-11-06T16:47:53.381859+00:00, execution_date=20241106T164753, start_date=20241106T165049, end_date=20241106T165049
+[2024-11-06T16:50:49.402+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T16:50:49.427+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T16:50:49.430+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

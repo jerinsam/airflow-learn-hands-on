@@ -59,7 +59,7 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
@@ -78,10 +78,10 @@ x-airflow-common:
     # - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     # - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
 
-  - "C:/Users/jerin/OneDrive - Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/dags:/opt/airflow/dags"
-  - "C:/Users/jerin/OneDrive - Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/logs:/opt/airflow/logs"
-  - "C:/Users/jerin/OneDrive - Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/config:/opt/airflow/config"
-  - "C:/Users/jerin/OneDrive - Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/plugins:/opt/airflow/plugins"
+  - "/mnt/c/Users/jerin/OneDrive\ -\ Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/dags:/opt/airflow/dags"
+  - "/mnt/c/Users/jerin/OneDrive\ -\ Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/logs:/opt/airflow/logs"
+  - "/mnt/c/Users/jerin/OneDrive\ -\ Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/config:/opt/airflow/config"
+  - "/mnt/c/Users/jerin/OneDrive\ -\ Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder/plugins:/opt/airflow/plugins"
 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
@@ -156,6 +156,29 @@ services:
   airflow-worker:
     <<: *airflow-common
     command: celery worker
+    healthcheck:
+      # yamllint disable rule:line-length
+      test:
+        - "CMD-SHELL"
+        - 'celery --app airflow.providers.celery.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}" || celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    environment:
+      <<: *airflow-common-env
+      # Required to handle warm shutdown of the celery workers properly
+      # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
+      DUMB_INIT_SETSID: "0"
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-worker-2:
+    <<: *airflow-common
+    command: celery worker -q high_cpu
     healthcheck:
       # yamllint disable rule:line-length
       test:
@@ -254,7 +277,7 @@ services:
     user: "0:0"
     volumes:
       # - ${AIRFLOW_PROJ_DIR:-.}:/sources
-      - "C:/Users/jerin/OneDrive - Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder:/sources"
+      - "/mnt/c/Users/jerin/OneDrive\ -\ Aligned Automation/Work/Learn/Tech Solutions/airflow-learn-hands-on/main/airflow-working-folder:/sources"
 
   airflow-cli:
     <<: *airflow-common

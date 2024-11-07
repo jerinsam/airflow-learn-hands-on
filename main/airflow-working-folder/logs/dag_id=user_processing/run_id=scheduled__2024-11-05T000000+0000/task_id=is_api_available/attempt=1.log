@@ -1,0 +1,30 @@
+[2024-11-06T08:27:22.175+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T08:27:22.205+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.is_api_available scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T08:27:22.221+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.is_api_available scheduled__2024-11-05T00:00:00+00:00 [queued]>
+[2024-11-06T08:27:22.222+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-06T08:27:22.247+0000] {taskinstance.py:2888} INFO - Executing <Task(HttpSensor): is_api_available> on 2024-11-05 00:00:00+00:00
+[2024-11-06T08:27:22.259+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=112) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T08:27:22.262+0000] {standard_task_runner.py:72} INFO - Started process 118 to run task
+[2024-11-06T08:27:22.263+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'is_api_available', 'scheduled__2024-11-05T00:00:00+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/user-processing.py', '--cfg-path', '/tmp/tmp25f4fb8e']
+[2024-11-06T08:27:22.265+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask is_api_available
+[2024-11-06T08:27:22.334+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.is_api_available scheduled__2024-11-05T00:00:00+00:00 [running]> on host db977aaf14d6
+[2024-11-06T08:27:22.484+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='is_api_available' AIRFLOW_CTX_EXECUTION_DATE='2024-11-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-05T00:00:00+00:00'
+[2024-11-06T08:27:22.487+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-06T08:27:22.488+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-06T08:27:22.488+0000] {logging_mixin.py:190} INFO - Current task name:is_api_available state:running start_date:2024-11-06 08:27:22.206695+00:00
+[2024-11-06T08:27:22.489+0000] {logging_mixin.py:190} INFO - Dag name:user_processing and current dag run status:running
+[2024-11-06T08:27:22.489+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T08:27:22.490+0000] {baseoperator.py:405} WARNING - HttpSensor.execute cannot be called outside TaskInstance!
+[2024-11-06T08:27:22.491+0000] {http.py:137} INFO - Poking: api/
+[2024-11-06T08:27:22.501+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2024-11-06T08:27:23.296+0000] {base.py:336} INFO - Success criteria met. Exiting.
+[2024-11-06T08:27:23.317+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T08:27:23.318+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=is_api_available, run_id=scheduled__2024-11-05T00:00:00+00:00, execution_date=20241105T000000, start_date=20241106T082722, end_date=20241106T082723
+[2024-11-06T08:27:23.334+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-06T08:27:23.335+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-06T08:27:23.335+0000] {logging_mixin.py:190} INFO - Dag name:user_processing queued_at:2024-11-06 08:26:56.862585+00:00
+[2024-11-06T08:27:23.336+0000] {logging_mixin.py:190} INFO - Task hostname:db977aaf14d6 operator:HttpSensor
+[2024-11-06T08:27:23.402+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T08:27:23.420+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

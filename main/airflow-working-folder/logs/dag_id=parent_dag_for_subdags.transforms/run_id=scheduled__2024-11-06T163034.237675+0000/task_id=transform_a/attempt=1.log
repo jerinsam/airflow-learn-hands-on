@@ -1,0 +1,22 @@
+[2024-11-06T16:31:51.202+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T16:31:51.230+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: parent_dag_for_subdags.transforms.transform_a scheduled__2024-11-06T16:30:34.237675+00:00 [queued]>
+[2024-11-06T16:31:51.247+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: parent_dag_for_subdags.transforms.transform_a scheduled__2024-11-06T16:30:34.237675+00:00 [queued]>
+[2024-11-06T16:31:51.248+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-06T16:31:51.290+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): transform_a> on 2024-11-06 16:30:34.237675+00:00
+[2024-11-06T16:31:51.301+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=488) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T16:31:51.304+0000] {standard_task_runner.py:72} INFO - Started process 496 to run task
+[2024-11-06T16:31:51.305+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'parent_dag_for_subdags.transforms', 'transform_a', 'scheduled__2024-11-06T16:30:34.237675+00:00', '--job-id', '145', '--raw', '--subdir', 'DAGS_FOLDER/parent_dag_for_subdags.py', '--cfg-path', '/tmp/tmpnq5ez0a3']
+[2024-11-06T16:31:51.307+0000] {standard_task_runner.py:105} INFO - Job 145: Subtask transform_a
+[2024-11-06T16:31:51.421+0000] {task_command.py:467} INFO - Running <TaskInstance: parent_dag_for_subdags.transforms.transform_a scheduled__2024-11-06T16:30:34.237675+00:00 [running]> on host 66acfa37dd15
+[2024-11-06T16:31:51.636+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='parent_dag_for_subdags.transforms' AIRFLOW_CTX_TASK_ID='transform_a' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T16:30:34.237675+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-06T16:30:34.237675+00:00'
+[2024-11-06T16:31:51.638+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T16:31:51.674+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-06T16:31:51.678+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'sleep 10']
+[2024-11-06T16:31:51.704+0000] {subprocess.py:86} INFO - Output:
+[2024-11-06T16:32:01.707+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-11-06T16:32:01.736+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T16:32:01.737+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=parent_dag_for_subdags.transforms, task_id=transform_a, run_id=scheduled__2024-11-06T16:30:34.237675+00:00, execution_date=20241106T163034, start_date=20241106T163151, end_date=20241106T163201
+[2024-11-06T16:32:01.789+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-06T16:32:01.799+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

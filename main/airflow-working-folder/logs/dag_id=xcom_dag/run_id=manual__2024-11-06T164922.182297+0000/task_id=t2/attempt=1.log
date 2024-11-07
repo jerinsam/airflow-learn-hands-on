@@ -1,0 +1,207 @@
+[2024-11-06T16:49:24.375+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-06T16:49:24.395+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xcom_dag.t2 manual__2024-11-06T16:49:22.182297+00:00 [queued]>
+[2024-11-06T16:49:24.408+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xcom_dag.t2 manual__2024-11-06T16:49:22.182297+00:00 [queued]>
+[2024-11-06T16:49:24.409+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-06T16:49:24.425+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): t2> on 2024-11-06 16:49:22.182297+00:00
+[2024-11-06T16:49:24.432+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=760) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-06T16:49:24.435+0000] {standard_task_runner.py:72} INFO - Started process 761 to run task
+[2024-11-06T16:49:24.435+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xcom_dag', 't2', 'manual__2024-11-06T16:49:22.182297+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/xcom_dag.py', '--cfg-path', '/tmp/tmpw3ts4zjj']
+[2024-11-06T16:49:24.436+0000] {standard_task_runner.py:105} INFO - Job 159: Subtask t2
+[2024-11-06T16:49:24.490+0000] {task_command.py:467} INFO - Running <TaskInstance: xcom_dag.t2 manual__2024-11-06T16:49:22.182297+00:00 [running]> on host 66acfa37dd15
+[2024-11-06T16:49:24.594+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xcom_dag' AIRFLOW_CTX_TASK_ID='t2' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T16:49:22.182297+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-06T16:49:22.182297+00:00'
+[2024-11-06T16:49:24.596+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-06T16:49:24.632+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'PythonOperator'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/xcom_dag.py", line 12, in _t2
+    print(ti.xcom_pull(key="my_key",task_ids = [t1]))
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 2031, in __str__
+    counter = "item" if (length := len(self)) == 1 else "items"
+                                   ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 2068, in __len__
+    self._len = get_query_count(self._select_asc, session=self._session)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 1939, in get_query_count
+    return session.scalar(count_stmt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1747, in scalar
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'PythonOperator'
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT xcom.value AS value 
+FROM xcom JOIN dag_run ON xcom.dag_run_id = dag_run.id 
+WHERE xcom.key = %(key_1)s AND xcom.task_id IN (%(task_id_1_1)s) AND xcom.dag_id = %(dag_id_1)s AND xcom.run_id = %(run_id_1)s) AS anon_1]
+[parameters: {'key_1': 'my_key', 'dag_id_1': 'xcom_dag', 'run_id_1': 'manual__2024-11-06T16:49:22.182297+00:00', 'task_id_1_1': <Task(PythonOperator): t1>}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-11-06T16:49:24.675+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=xcom_dag, task_id=t2, run_id=manual__2024-11-06T16:49:22.182297+00:00, execution_date=20241106T164922, start_date=20241106T164924, end_date=20241106T164924
+[2024-11-06T16:49:24.694+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-06T16:49:24.694+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 159 for task t2 ((psycopg2.ProgrammingError) can't adapt type 'PythonOperator'
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT xcom.value AS value 
+FROM xcom JOIN dag_run ON xcom.dag_run_id = dag_run.id 
+WHERE xcom.key = %(key_1)s AND xcom.task_id IN (%(task_id_1_1)s) AND xcom.dag_id = %(dag_id_1)s AND xcom.run_id = %(run_id_1)s) AS anon_1]
+[parameters: {'key_1': 'my_key', 'dag_id_1': 'xcom_dag', 'run_id_1': 'manual__2024-11-06T16:49:22.182297+00:00', 'task_id_1_1': <Task(PythonOperator): t1>}]
+(Background on this error at: https://sqlalche.me/e/14/f405); 761)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.ProgrammingError: can't adapt type 'PythonOperator'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/xcom_dag.py", line 12, in _t2
+    print(ti.xcom_pull(key="my_key",task_ids = [t1]))
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 2031, in __str__
+    counter = "item" if (length := len(self)) == 1 else "items"
+                                   ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 2068, in __len__
+    self._len = get_query_count(self._select_asc, session=self._session)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/db.py", line 1939, in get_query_count
+    return session.scalar(count_stmt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1747, in scalar
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.ProgrammingError) can't adapt type 'PythonOperator'
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT xcom.value AS value 
+FROM xcom JOIN dag_run ON xcom.dag_run_id = dag_run.id 
+WHERE xcom.key = %(key_1)s AND xcom.task_id IN (%(task_id_1_1)s) AND xcom.dag_id = %(dag_id_1)s AND xcom.run_id = %(run_id_1)s) AS anon_1]
+[parameters: {'key_1': 'my_key', 'dag_id_1': 'xcom_dag', 'run_id_1': 'manual__2024-11-06T16:49:22.182297+00:00', 'task_id_1_1': <Task(PythonOperator): t1>}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-11-06T16:49:24.731+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-11-06T16:49:24.758+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-06T16:49:24.764+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
