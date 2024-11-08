@@ -1,0 +1,8 @@
+dag_id: 'process_data'
+dag_start_date: 'datetime(2022,1,1)'
+dag_schedule: '@daily'
+dag_catchup: 'False'
+task_1: 'process_data'
+operator_1: 'PythonOperator'
+task_2: 'get_api_data'
+operator_2: 'BashOperator'

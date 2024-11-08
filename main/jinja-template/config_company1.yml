@@ -1,0 +1,8 @@
+dag_id: 'extract_data'
+dag_start_date: 'datetime(2022,1,1)'
+dag_schedule: '@daily'
+dag_catchup: 'False'
+task_1: 'create_table'
+operator_1: 'PostgresOperator'
+task_2: 'get_data'
+operator_2: 'PostgresOperator'

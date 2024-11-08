@@ -1,6 +1,5 @@
 from airflow import DAG
 from datetime import datetime
-
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.http.sensors.http import HttpSensor
 from airflow.providers.http.operators.http import SimpleHttpOperator
