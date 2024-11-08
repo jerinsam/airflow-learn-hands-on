@@ -1,0 +1,24 @@
+[2024-11-08T10:33:04.437+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-08T10:33:04.456+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: xcom_dag.branch scheduled__2024-11-07T00:00:00+00:00 [queued]>
+[2024-11-08T10:33:04.466+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: xcom_dag.branch scheduled__2024-11-07T00:00:00+00:00 [queued]>
+[2024-11-08T10:33:04.467+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-11-08T10:33:04.481+0000] {taskinstance.py:2888} INFO - Executing <Task(BranchPythonOperator): branch> on 2024-11-07 00:00:00+00:00
+[2024-11-08T10:33:04.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=71) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-08T10:33:04.488+0000] {standard_task_runner.py:72} INFO - Started process 72 to run task
+[2024-11-08T10:33:04.489+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'xcom_dag', 'branch', 'scheduled__2024-11-07T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/xcom_dag.py', '--cfg-path', '/tmp/tmpmnsntc0d']
+[2024-11-08T10:33:04.490+0000] {standard_task_runner.py:105} INFO - Job 18: Subtask branch
+[2024-11-08T10:33:04.548+0000] {task_command.py:467} INFO - Running <TaskInstance: xcom_dag.branch scheduled__2024-11-07T00:00:00+00:00 [running]> on host 8be5978291e0
+[2024-11-08T10:33:04.648+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='xcom_dag' AIRFLOW_CTX_TASK_ID='branch' AIRFLOW_CTX_EXECUTION_DATE='2024-11-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-07T00:00:00+00:00'
+[2024-11-08T10:33:04.650+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-08T10:33:04.669+0000] {baseoperator.py:405} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2024-11-08T10:33:04.682+0000] {python.py:240} INFO - Done. Returned value was: t2
+[2024-11-08T10:33:04.683+0000] {branch.py:38} INFO - Branch into t2
+[2024-11-08T10:33:04.684+0000] {skipmixin.py:230} INFO - Following branch ('t2',)
+[2024-11-08T10:33:04.694+0000] {skipmixin.py:278} INFO - Skipping tasks [('t3', -1)]
+[2024-11-08T10:33:04.732+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-08T10:33:04.733+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=xcom_dag, task_id=branch, run_id=scheduled__2024-11-07T00:00:00+00:00, execution_date=20241107T000000, start_date=20241108T103304, end_date=20241108T103304
+[2024-11-08T10:33:04.784+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-08T10:33:04.825+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-08T10:33:04.827+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
