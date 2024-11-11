@@ -1,0 +1,21 @@
+[2024-11-11T09:48:29.761+0000] {processor.py:186} INFO - Started process (PID=70) to work on /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:48:29.783+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/parent_dag_for_taskgroups.py for tasks to queue
+[2024-11-11T09:48:29.816+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:29.815+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:48:30.057+0000] {processor.py:925} INFO - DAG(s) 'parent_dag_for_taskgroup' retrieved from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:48:30.256+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:30.255+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:48:30.417+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:30.417+0000] {dag.py:4180} INFO - Setting next_dagrun for parent_dag_for_taskgroup to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:48:30.515+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/parent_dag_for_taskgroups.py took 0.780 seconds
+[2024-11-11T09:49:08.847+0000] {processor.py:186} INFO - Started process (PID=64) to work on /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:08.849+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/parent_dag_for_taskgroups.py for tasks to queue
+[2024-11-11T09:49:08.852+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:08.851+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:08.899+0000] {processor.py:925} INFO - DAG(s) 'parent_dag_for_taskgroup' retrieved from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:08.952+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:08.951+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:49:09.016+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:09.015+0000] {dag.py:4180} INFO - Setting next_dagrun for parent_dag_for_taskgroup to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:49:09.090+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/parent_dag_for_taskgroups.py took 0.251 seconds
+[2024-11-11T09:49:41.155+0000] {processor.py:186} INFO - Started process (PID=90) to work on /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:41.156+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/parent_dag_for_taskgroups.py for tasks to queue
+[2024-11-11T09:49:41.159+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:41.159+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:41.199+0000] {processor.py:925} INFO - DAG(s) 'parent_dag_for_taskgroup' retrieved from /opt/airflow/dags/parent_dag_for_taskgroups.py
+[2024-11-11T09:49:41.236+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:41.235+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:49:41.542+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:41.542+0000] {dag.py:4180} INFO - Setting next_dagrun for parent_dag_for_taskgroup to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:49:41.565+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/parent_dag_for_taskgroups.py took 0.417 seconds

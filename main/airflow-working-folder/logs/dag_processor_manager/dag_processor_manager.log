@@ -1,0 +1,141 @@
+[2024-11-11T09:48:22.650+0000] {manager.py:483} INFO - Processing files using up to 2 processes at a time 
+[2024-11-11T09:48:22.662+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2024-11-11T09:48:22.669+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-11-11T09:48:22.670+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2024-11-11T09:48:22.960+0000] {manager.py:824} INFO - There are 14 files in /opt/airflow/dags
+[2024-11-11T09:48:24.300+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run      Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------  ----------------------
+/opt/airflow/dags/check_context.py                                            0           0                                                   0
+/opt/airflow/dags/check_params.py                                             0           0                                                   0
+/opt/airflow/dags/check_variables_task_decorator.py     61  0.16s             0           0                                                   0
+/opt/airflow/dags/consumer.py                                                 0           0                                                   0
+/opt/airflow/dags/parallel_dag.py                                             0           0                                                   0
+/opt/airflow/dags/parent_dag_for_subdags.py                                   0           0                                                   0
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                0           0                                                   0
+/opt/airflow/dags/producer.py                                                 0           0                                                   0
+/opt/airflow/dags/user-processing.py                    60  0.43s             0           0                                                   0
+/opt/airflow/dags/xcom_dag.py                                                 0           0                                                   0
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0                                                   0
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0                                                   0
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0                                                   0
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0                                                   0
+================================================================================
+[2024-11-11T09:48:34.121+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2024-11-11T09:49:07.038+0000] {manager.py:483} INFO - Processing files using up to 2 processes at a time 
+[2024-11-11T09:49:07.038+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2024-11-11T09:49:07.039+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-11-11T09:49:07.040+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2024-11-11T09:49:07.284+0000] {manager.py:824} INFO - There are 14 files in /opt/airflow/dags
+[2024-11-11T09:49:07.467+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run      Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------  ----------------------
+/opt/airflow/dags/check_context.py                                            0           0                                                   0
+/opt/airflow/dags/check_params.py                                             0           0                                                   0
+/opt/airflow/dags/check_variables_task_decorator.py     55  0.02s             0           0                                                   0
+/opt/airflow/dags/consumer.py                                                 0           0                                                   0
+/opt/airflow/dags/parallel_dag.py                                             0           0                                                   0
+/opt/airflow/dags/parent_dag_for_subdags.py                                   0           0                                                   0
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                0           0                                                   0
+/opt/airflow/dags/producer.py                                                 0           0                                                   0
+/opt/airflow/dags/user-processing.py                    54  0.06s             0           0                                                   0
+/opt/airflow/dags/xcom_dag.py                                                 0           0                                                   0
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0                                                   0
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0                                                   0
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0                                                   0
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0                                                   0
+================================================================================
+[2024-11-11T09:49:38.110+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/user-processing.py                                          1           0  1.23s           2024-11-11T09:49:08                      12
+/opt/airflow/dags/parallel_dag.py                                             1           0  0.43s           2024-11-11T09:49:09                      12
+/opt/airflow/dags/parent_dag_for_subdags.py                                   3           0  0.35s           2024-11-11T09:49:08                      20
+/opt/airflow/dags/consumer.py                                                 1           0  0.34s           2024-11-11T09:49:09                      13
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                1           0  0.29s           2024-11-11T09:49:09                      12
+/opt/airflow/dags/check_context.py                                            1           0  0.26s           2024-11-11T09:49:08                      12
+/opt/airflow/dags/check_variables_task_decorator.py     74  0.02s             1           0  0.18s           2024-11-11T09:49:07                      12
+/opt/airflow/dags/producer.py                                                 1           0  0.17s           2024-11-11T09:49:09                      13
+/opt/airflow/dags/check_params.py                       75  0.01s             1           0  0.17s           2024-11-11T09:49:07                      12
+/opt/airflow/dags/xcom_dag.py                                                 1           0  0.15s           2024-11-11T09:49:08                      12
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0  0.10s           2024-11-11T09:49:08                       3
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0  0.10s           2024-11-11T09:49:08                       3
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0  0.08s           2024-11-11T09:49:08                       3
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0  0.07s           2024-11-11T09:49:08                       3
+================================================================================
+[2024-11-11T09:50:11.746+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/check_variables_task_decorator.py                           1           0  1.49s           2024-11-11T09:49:39                      12
+/opt/airflow/dags/check_params.py                                             1           0  1.44s           2024-11-11T09:49:39                      12
+/opt/airflow/dags/user-processing.py                                          1           0  1.36s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/check_context.py                                            1           0  0.45s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                1           0  0.44s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/parent_dag_for_subdags.py                                   3           0  0.41s           2024-11-11T09:49:40                      20
+/opt/airflow/dags/parallel_dag.py                                             1           0  0.35s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/consumer.py                                                 1           0  0.34s           2024-11-11T09:49:41                      13
+/opt/airflow/dags/producer.py                                                 1           0  0.33s           2024-11-11T09:49:42                      13
+/opt/airflow/dags/xcom_dag.py                                                 1           0  0.32s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0  0.11s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0  0.10s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0  0.07s           2024-11-11T09:49:40                       3
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0  0.06s           2024-11-11T09:49:41                       3
+================================================================================
+[2024-11-11T09:51:13.765+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/check_variables_task_decorator.py     96  59.51s            1           0  1.49s           2024-11-11T09:49:39                      12
+/opt/airflow/dags/check_params.py                                             1           0  1.44s           2024-11-11T09:49:39                      12
+/opt/airflow/dags/user-processing.py                    95  59.76s            1           0  1.36s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/check_context.py                                            1           0  0.45s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                1           0  0.44s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/parent_dag_for_subdags.py                                   3           0  0.41s           2024-11-11T09:49:40                      20
+/opt/airflow/dags/parallel_dag.py                                             1           0  0.35s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/consumer.py                                                 1           0  0.34s           2024-11-11T09:49:41                      13
+/opt/airflow/dags/producer.py                                                 1           0  0.33s           2024-11-11T09:49:42                      13
+/opt/airflow/dags/xcom_dag.py                                                 1           0  0.32s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0  0.11s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0  0.10s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0  0.07s           2024-11-11T09:49:40                       3
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0  0.06s           2024-11-11T09:49:41                       3
+================================================================================
+[2024-11-11T09:51:17.470+0000] {manager.py:1366} ERROR - Processor for /opt/airflow/dags/user-processing.py with PID 95 started at 2024-11-11T09:50:13.932443+00:00 has timed out, killing it.
+[2024-11-11T09:51:17.524+0000] {manager.py:1366} ERROR - Processor for /opt/airflow/dags/check_variables_task_decorator.py with PID 96 started at 2024-11-11T09:50:14.182915+00:00 has timed out, killing it.
+[2024-11-11T09:51:53.973+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+---------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/user-processing.py                                          0           1  63.54s          2024-11-11T09:51:17                       0
+/opt/airflow/dags/check_variables_task_decorator.py                           0           1  63.29s          2024-11-11T09:51:17                       0
+/opt/airflow/dags/check_params.py                       97  36.35s            1           0  1.44s           2024-11-11T09:49:39                      12
+/opt/airflow/dags/check_context.py                      98  36.31s            1           0  0.45s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/parent_dag_for_taskgroups.py                                1           0  0.44s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/parent_dag_for_subdags.py                                   3           0  0.41s           2024-11-11T09:49:40                      20
+/opt/airflow/dags/parallel_dag.py                                             1           0  0.35s           2024-11-11T09:49:41                      12
+/opt/airflow/dags/consumer.py                                                 1           0  0.34s           2024-11-11T09:49:41                      13
+/opt/airflow/dags/producer.py                                                 1           0  0.33s           2024-11-11T09:49:42                      13
+/opt/airflow/dags/xcom_dag.py                                                 1           0  0.32s           2024-11-11T09:49:40                      12
+/opt/airflow/dags/subdags/subdag_transforms.py                                0           0  0.11s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/taskgroup/taskgroup_downloads.py                            0           0  0.10s           2024-11-11T09:49:41                       3
+/opt/airflow/dags/subdags/subdag_downloads.py                                 0           0  0.07s           2024-11-11T09:49:40                       3
+/opt/airflow/dags/taskgroup/taskgroup_transforms.py                           0           0  0.06s           2024-11-11T09:49:41                       3
+================================================================================
+[2024-11-11T09:51:56.895+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2024-11-11T09:52:02.621+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15

@@ -1,0 +1,33 @@
+[2024-11-11T09:48:24.206+0000] {processor.py:186} INFO - Started process (PID=61) to work on /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:48:24.208+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/check_variables_task_decorator.py for tasks to queue
+[2024-11-11T09:48:24.234+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:24.233+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:48:24.355+0000] {processor.py:925} INFO - DAG(s) 'check_variables_task_decorator' retrieved from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:48:25.728+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.728+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:check_variables_task_decorator
+[2024-11-11T09:48:25.758+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.758+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:check_variables_task_decorator
+[2024-11-11T09:48:25.784+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.784+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:check_variables_task_decorator
+[2024-11-11T09:48:25.793+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.792+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:check_variables_task_decorator
+[2024-11-11T09:48:25.809+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.809+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:check_variables_task_decorator
+[2024-11-11T09:48:25.826+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.826+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:check_variables_task_decorator
+[2024-11-11T09:48:25.851+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.850+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:check_variables_task_decorator
+[2024-11-11T09:48:25.852+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.851+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:48:25.904+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.904+0000] {dag.py:3262} INFO - Creating ORM DAG for check_variables_task_decorator
+[2024-11-11T09:48:25.948+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:25.948+0000] {dag.py:4180} INFO - Setting next_dagrun for check_variables_task_decorator to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:48:26.033+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/check_variables_task_decorator.py took 1.878 seconds
+[2024-11-11T09:49:07.470+0000] {processor.py:186} INFO - Started process (PID=55) to work on /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:07.480+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/check_variables_task_decorator.py for tasks to queue
+[2024-11-11T09:49:07.482+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:07.481+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:07.512+0000] {processor.py:925} INFO - DAG(s) 'check_variables_task_decorator' retrieved from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:07.548+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:07.547+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:49:07.584+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:07.584+0000] {dag.py:4180} INFO - Setting next_dagrun for check_variables_task_decorator to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:49:07.607+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/check_variables_task_decorator.py took 0.149 seconds
+[2024-11-11T09:49:38.118+0000] {processor.py:186} INFO - Started process (PID=74) to work on /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:38.119+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/check_variables_task_decorator.py for tasks to queue
+[2024-11-11T09:49:38.129+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:38.122+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:38.162+0000] {processor.py:925} INFO - DAG(s) 'check_variables_task_decorator' retrieved from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:49:38.241+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:38.240+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T09:49:38.291+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:38.291+0000] {dag.py:4180} INFO - Setting next_dagrun for check_variables_task_decorator to 2024-11-10 00:00:00+00:00, run_after=2024-11-11 00:00:00+00:00
+[2024-11-11T09:49:39.539+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/check_variables_task_decorator.py took 1.432 seconds
+[2024-11-11T09:50:22.512+0000] {processor.py:186} INFO - Started process (PID=96) to work on /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:50:26.910+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/check_variables_task_decorator.py for tasks to queue
+[2024-11-11T09:50:32.322+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:50:29.326+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/check_variables_task_decorator.py
+[2024-11-11T09:51:13.788+0000] {processor.py:925} INFO - DAG(s) 'check_variables_task_decorator' retrieved from /opt/airflow/dags/check_variables_task_decorator.py

@@ -1,0 +1,15 @@
+[2024-11-11T09:48:30.752+0000] {processor.py:186} INFO - Started process (PID=71) to work on /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:48:30.754+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/taskgroup/taskgroup_downloads.py for tasks to queue
+[2024-11-11T09:48:30.764+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:48:30.763+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:48:30.841+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:48:30.882+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/taskgroup/taskgroup_downloads.py took 0.176 seconds
+[2024-11-11T09:49:08.863+0000] {processor.py:186} INFO - Started process (PID=65) to work on /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:08.864+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/taskgroup/taskgroup_downloads.py for tasks to queue
+[2024-11-11T09:49:08.869+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:08.868+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:08.886+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:08.906+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/taskgroup/taskgroup_downloads.py took 0.053 seconds
+[2024-11-11T09:49:41.473+0000] {processor.py:186} INFO - Started process (PID=91) to work on /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:41.476+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/taskgroup/taskgroup_downloads.py for tasks to queue
+[2024-11-11T09:49:41.481+0000] {logging_mixin.py:190} INFO - [2024-11-11T09:49:41.480+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:41.506+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/taskgroup/taskgroup_downloads.py
+[2024-11-11T09:49:41.524+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/taskgroup/taskgroup_downloads.py took 0.064 seconds
