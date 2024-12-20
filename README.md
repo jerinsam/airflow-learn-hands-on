@@ -1,4 +1,4 @@
-## LEARN KAFKA
+## LEARN Airflow
 **DATA ENGINEERING - Learn Airflow**
 This repo covers Airflow tutorial and for this tutorial Airflow Docker distribution is used.
 
